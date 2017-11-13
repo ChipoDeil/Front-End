@@ -1,16 +1,12 @@
 import React, {Component} from 'react';
 import styled from "styled-components";
 
-import ListItems from "../ListItems";
-
-
-
-export default function List ({data}){
-    return(
-        <ul className="list-group">
-            {data.map((dataField, index) =>
-                <ListItems key={index} {...dataField}></ListItems>
-            )}
-        </ul>
-    )
+export default class List extends Component{
+    render(){
+        return(
+            <ul className="list-group">
+                {this.props.children}
+            </ul>
+        )
+    }
 }
