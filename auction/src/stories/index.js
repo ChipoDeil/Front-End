@@ -46,12 +46,12 @@ const dataItemsForList = [
   {
     text: "Information about lot 1",
     src: imageFile,
-    time: "12:01:01"
+    time: 2
   },
   {
     text: "Information about lot 2",
     src: imageFile,
-    time: "11:59:01"
+    time: 1
   }
 ]
 

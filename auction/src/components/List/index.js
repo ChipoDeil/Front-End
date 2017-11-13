@@ -9,7 +9,7 @@ export default function List ({data}){
     return(
         <ul className="list-group">
             {data.map((dataField, index) =>
-                <ListItems {...dataField}></ListItems>
+                <ListItems key={index} {...dataField}></ListItems>
             )}
         </ul>
     )

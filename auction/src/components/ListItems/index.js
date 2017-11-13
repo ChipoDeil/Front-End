@@ -20,17 +20,31 @@ justify-content: space-between;
 width:80%;
 `
 
+export default class ListItems extends Component {
+    
+    constructor (props){
+        super(props)
+        this.state = {
+            time: props.time
+        }
+        this.onMoreButtonClick = this.onMoreButtonClick.bind(this);
+    }
 
-export default function ListItems ({text, src, time}){
-    return(
-        <li className="list-group-item">
-            <Image src={src}/>
-        <Container>
-        <TextHolder>{text}</TextHolder>
-        <TextHolder>{time}</TextHolder>
-        <ButtonPrimary title="More"/>
-        </Container>
-        </li>
-        
-    )
+    onMoreButtonClick(){
+        this.setState({time: this.state.time + 1})
+    }
+    
+    render(){
+        return(
+            <li className="list-group-item">
+                <Image src={this.props.src}/>
+            <Container>
+            <TextHolder>{this.props.text}</TextHolder>
+            <TextHolder>{this.state.time}</TextHolder>
+            <ButtonPrimary onClick={this.onMoreButtonClick} title="More"/>
+            </Container>
+            </li>
+        )
+    }
+
 }
